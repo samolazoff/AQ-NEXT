@@ -46,7 +46,7 @@ function ClientItem (props) {
     return (
         <li className="client-item w-60">
             <Link href={link} className="flex flex-col justify-end items-center">
-                <Image src={image.src} alt={title.src} width={200} height={200}/>
+                <Image src={image.src} alt={title} width={200} height={200}/>
             </Link>
         </li>
     )
@@ -61,7 +61,7 @@ export default function Clients () {
                     dataClients.map((itm, idx) => {
                         const {image, title, link} = itm;
                         return(
-                            <ClientItem key={idx} link={link} title={title} image={image}/>
+                            <ClientItem key={idx} {...itm}/>
                         )
                     })
                 }
